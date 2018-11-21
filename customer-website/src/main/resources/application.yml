@@ -1,0 +1,30 @@
+cse-config-order: 100
+
+## Spring Boot configurations
+server:
+  port: 9091
+
+## CSE configurations
+APPLICATION_ID: houseapp
+service_description:
+  name: customer-website
+  version: 0.0.1
+  environment: development
+cse:
+  service:
+    registry:
+      address: http://localhost:30100
+      instance:
+        watch: false
+
+  credentials:
+    accessKey: BUDCVWSAW04UZVLSZBQR
+    secretKey: BHixEctCJFbTkPUVUUjRDSeVwMAknlAy5oB7idgR
+    akskCustomCipher: default
+  rest:
+    address: 0.0.0.0:9091
+    server:
+      thread-count: 10
+## static web site will token root
+    servlet:
+      urlPattern: /api/*

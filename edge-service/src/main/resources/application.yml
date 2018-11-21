@@ -1,0 +1,41 @@
+cse-config-order: 100
+
+# omega need this name
+spring:
+  application:
+    name: edge-service
+
+## CSE configurations
+APPLICATION_ID: houseapp
+service_description:
+  name: ${spring.application.name}
+  version: 0.0.1
+  environment: development
+cse:
+  service:
+    registry:
+      address: http://localhost:30100
+      instance:
+        watch: false
+
+  references:
+    version-rule: 0.0.0+
+  credentials:
+    accessKey: BUDCVWSAW04UZVLSZBQR
+    secretKey: BHixEctCJFbTkPUVUUjRDSeVwMAknlAy5oB7idgR
+    akskCustomCipher: default
+
+  rest:
+    address: 0.0.0.0:18081
+    server:
+      thread-count: 10
+
+  http:
+    dispatcher:
+      edge:
+        api:
+          enabled: true
+        default:
+          prefix: api
+          withVersion: false
+          prefixSegmentCount: 2

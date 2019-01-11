@@ -2,7 +2,7 @@ cse-config-order: 100
 
 ## Spring Boot configurations
 server:
-  port: 9091
+  port: 9092
 
 ## CSE configurations
 APPLICATION_ID: houseapp
@@ -22,9 +22,16 @@ cse:
     secretKey: BHixEctCJFbTkPUVUUjRDSeVwMAknlAy5oB7idgR
     akskCustomCipher: default
   rest:
-    address: 0.0.0.0:9091
+    address: 0.0.0.0:9092
     server:
       thread-count: 10
 ## static web site will token root
     servlet:
       urlPattern: /api/*
+
+  handler:
+    chain:
+      Provider:
+        default: perf-stats,qps-flowcontrol-provider,bizkeeper-provider,tcc-provider # twoPC-provider
+      Consumer:
+        default: perf-stats,qps-flowcontrol-consumer,loadbalance,bizkeeper-consumer,tcc-consumer # twoPC-consumer

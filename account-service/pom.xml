@@ -34,6 +34,17 @@
             <groupId>org.apache.servicecomb.saga</groupId>
             <artifactId>omega-transport-servicecomb</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.servicecomb</groupId>
+            <artifactId>spring-boot-starter-transport</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
